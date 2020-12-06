@@ -1,0 +1,16 @@
+1. Implement the Render Recipe Functionality
+
+  hash change listener
+  listen for load event
+
+  0. Render spinner
+  1. Call the API and get the recipe information
+  2. Format the recipe information
+  3. Format the html
+  4. Display the html
+
+
+  model.js has the request to the api and the formatting
+
+
+Model loadRecipe is currently a not pure function. Should state be a class with a loadRecipe method?
