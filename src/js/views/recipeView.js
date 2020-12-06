@@ -1,6 +1,6 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import icons from "url:../../../img/icons.svg";
+import icons from "url:../../img/icons.svg";
 
 // I export both the class and an instance of the class.
 // The class is exported for testing. Otherwise the document would have no html when I tried to test
