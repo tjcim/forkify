@@ -1,6 +1,7 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import icons from "url:../../img/icons.svg";
+import icons from "../../img/icons.svg";
+import { Fraction } from "fractional";
 
 // I export both the class and an instance of the class.
 // The class is exported for testing. Otherwise the document would have no html when I tried to test
@@ -9,15 +10,30 @@ export class RecipeView {
   #parentElement = document.querySelector(".recipe");
   #data;
 
-  render(data) {
-    this.#data = data;
-    const markup = this.#generateMarkup();
+  #clear() {
+    this.#parentElement.innerHTML = "";
+  }
+
+  render(markup) {
     this.#clear();
     this.#parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  #clear() {
-    this.#parentElement.innerHTML = "";
+  renderRecipe(data) {
+    this.#data = data;
+    const markup = this.#generateMarkup();
+    this.render(markup);
+  }
+
+  renderSpinner() {
+    const markup = `
+      <div class="spinner">
+        <svg>
+          <use href="${icons}#icon-loader"></use>
+        </svg>
+      </div>
+    `;
+    this.render(markup);
   }
 
   #generateMarkup() {
@@ -41,7 +57,7 @@ export class RecipeView {
     </div>
     <div class="recipe__info">
       <svg class="recipe__info-icon">
-        <use href="src/img/icons.svg#icon-users"></use>
+        <use href="${icons}#icon-users"></use>
       </svg>
       <span class="recipe__info-data recipe__info-data--people">${
         this.#data.servings
@@ -51,12 +67,12 @@ export class RecipeView {
       <div class="recipe__info-buttons">
         <button class="btn--tiny btn--increase-servings">
           <svg>
-            <use href="src/img/icons.svg#icon-minus-circle"></use>
+            <use href="${icons}#icon-minus-circle"></use>
           </svg>
         </button>
         <button class="btn--tiny btn--increase-servings">
           <svg>
-            <use href="src/img/icons.svg#icon-plus-circle"></use>
+            <use href="${icons}#icon-plus-circle"></use>
           </svg>
         </button>
       </div>
@@ -64,25 +80,13 @@ export class RecipeView {
 
     <button class="btn--round">
       <svg class="">
-        <use href="src/img/icons.svg#icon-bookmark-fill"></use>
+        <use href="${icons}#icon-bookmark-fill"></use>
       </svg>
     </button>
   </div>
   <div class="recipe__ingredients">
     <h2 class="heading--2">Recipe ingredients</h2>
-    <ul class="recipe__ingredient-list">${this.#data.ingredients .map((ing) => { return `
-      <li class="recipe__ingredient">
-        <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
-        </svg>
-        <div class="recipe__quantity">${ing.quantity}</div>
-        <div class="recipe__description">
-          <span class="recipe__unit">${ing.unit}</span>
-          ${ing.description}
-        </div>
-      </li>`;
-      })
-      .join("")}
+    <ul class="recipe__ingredient-list">${this.#data.ingredients .map(this.#generateMarkupIngredient).join("")}
     </ul>
   </div>
   <div class="recipe__directions">
@@ -97,11 +101,27 @@ export class RecipeView {
     <a class="btn--small recipe__btn" href="${this.#data.sourceUrl}" target="_blank">
       <span>Directions</span>
       <svg class="search__icon">
-        <use href="src/img/icons.svg#icon-arrow-right"></use>
+        <use href="${icons}#icon-arrow-right"></use>
       </svg>
     </a>
   </div>`;
   }
+
+  #generateMarkupIngredient(ing) {
+    return `
+      <li class="recipe__ingredient">
+        <svg class="recipe__icon">
+          <use href="${icons}#icon-check"></use>
+        </svg>
+        <div class="recipe__quantity">${
+          ing.quantity ? new Fraction(ing.quantity).toString() : ""
+        }</div>
+        <div class="recipe__description">
+          <span class="recipe__unit">${ing.unit}</span>
+          ${ing.description}
+        </div>
+      </li>`;
+  }
 }
 
-export const recipeView = new RecipeView();
+// export const recipeView = new RecipeView();

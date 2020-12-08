@@ -35,3 +35,5 @@ export const recipe_5ed6604591c37cdc054bca85 = {
   cookingTime: 75,
   id: "5ed6604591c37cdc054bca85",
 };
+
+export const trevor = "blah";

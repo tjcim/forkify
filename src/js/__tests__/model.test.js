@@ -9,15 +9,17 @@ beforeEach(() => {
   fetch.resetMocks();
 });
 
-describe("Request from the api", () => {
+describe("State class", () => {
+  let state;
+  beforeEach(() => {
+    state = new model.State();
+  });
   test("Received valid data", async () => {
     fetch.mockResponseOnce(
       JSON.stringify(apiResponse.id_5ed6604591c37cdc054bca85)
     );
-    const res = await model.loadRecipe("5ed6604591c37cdc054bca85");
-    expect(model.state.recipe).toStrictEqual(
-      recipes.recipe_5ed6604591c37cdc054bca85
-    );
+    const res = await state.loadRecipe("5ed6604591c37cdc054bca85");
+    expect(state.recipe).toStrictEqual(recipes.recipe_5ed6604591c37cdc054bca85);
     expect(fetch).toHaveBeenCalledTimes(1);
   });
 
@@ -26,7 +28,7 @@ describe("Request from the api", () => {
     const init = { status: 400, statusText: "Bad Request" };
     fetch.mockResponseOnce(JSON.stringify(body), init);
     await expect(
-      model.loadRecipe("5ed6604591c37cdc054bca85zzzzz")
+      state.loadRecipe("5ed6604591c37cdc054bca85zzzzz")
     ).rejects.toThrowError();
     expect(fetch).toHaveBeenCalledTimes(1);
   });

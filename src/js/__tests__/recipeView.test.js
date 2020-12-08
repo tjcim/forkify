@@ -23,7 +23,7 @@ describe("Recipe View Class", () => {
   });
   test("renders a recipe", () => {
     // const recipeView = new RecipeView.RecipeView();
-    recipeView.render(recipes.recipe_5ed6604591c37cdc054bca85);
+    recipeView.renderRecipe(recipes.recipe_5ed6604591c37cdc054bca85);
     const recipeHtml = document.querySelector(".recipe").innerHTML;
     expect(recipeHtml).toBe(
       formattedRecipe.formattedRecipe_5ed6604591c37cdc054bca85
@@ -31,11 +31,7 @@ describe("Recipe View Class", () => {
   });
   test("render the spinner", () => {
     recipeView.renderSpinner();
-    expect(recipeHtml).toBe(`
-        <div class="spinner">
-          <svg>
-            <use href="src/img/icons.svg#icon-loader"></use>
-          </svg>
-        </div>`);
+    const spinnerHTML = document.querySelector(".recipe").innerHTML;
+    expect(spinnerHTML).toMatch(new RegExp('class="spinner"'));
   });
 });

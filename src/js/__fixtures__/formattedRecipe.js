@@ -8,14 +8,14 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
   <div class="recipe__details">
     <div class="recipe__info">
       <svg class="recipe__info-icon">
-        <use href="src/img/icons.svg#icon-clock"></use>
+        <use href="#icon-clock"></use>
       </svg>
       <span class="recipe__info-data recipe__info-data--minutes">75</span>
       <span class="recipe__info-text">minutes</span>
     </div>
     <div class="recipe__info">
       <svg class="recipe__info-icon">
-        <use href="src/img/icons.svg#icon-users"></use>
+        <use href="#icon-users"></use>
       </svg>
       <span class="recipe__info-data recipe__info-data--people">4</span>
       <span class="recipe__info-text">servings</span>
@@ -23,12 +23,12 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       <div class="recipe__info-buttons">
         <button class="btn--tiny btn--increase-servings">
           <svg>
-            <use href="src/img/icons.svg#icon-minus-circle"></use>
+            <use href="#icon-minus-circle"></use>
           </svg>
         </button>
         <button class="btn--tiny btn--increase-servings">
           <svg>
-            <use href="src/img/icons.svg#icon-plus-circle"></use>
+            <use href="#icon-plus-circle"></use>
           </svg>
         </button>
       </div>
@@ -36,7 +36,7 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
 
     <button class="btn--round">
       <svg class="">
-        <use href="src/img/icons.svg#icon-bookmark-fill"></use>
+        <use href="#icon-bookmark-fill"></use>
       </svg>
     </button>
   </div>
@@ -45,9 +45,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
     <ul class="recipe__ingredient-list">
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">0.25</div>
+        <div class="recipe__quantity">1/4</div>
         <div class="recipe__description">
           <span class="recipe__unit">cup</span>
           balsamic vinegar
@@ -55,9 +55,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">0.5</div>
+        <div class="recipe__quantity">1/2</div>
         <div class="recipe__description">
           <span class="recipe__unit">cup</span>
           strawberry preserves/jam
@@ -65,9 +65,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">null</div>
+        <div class="recipe__quantity"></div>
         <div class="recipe__description">
           <span class="recipe__unit"></span>
           Sriracha to taste
@@ -75,7 +75,7 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
         <div class="recipe__quantity">1</div>
         <div class="recipe__description">
@@ -85,9 +85,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">1.5</div>
+        <div class="recipe__quantity">1 1/2</div>
         <div class="recipe__description">
           <span class="recipe__unit">cups</span>
           mozzarella shredded
@@ -95,9 +95,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">0.25</div>
+        <div class="recipe__quantity">1/4</div>
         <div class="recipe__description">
           <span class="recipe__unit">cup</span>
           parmigiano reggiano grated
@@ -105,7 +105,7 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
         <div class="recipe__quantity">1</div>
         <div class="recipe__description">
@@ -115,7 +115,7 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
         <div class="recipe__quantity">4</div>
         <div class="recipe__description">
@@ -125,9 +125,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">0.25</div>
+        <div class="recipe__quantity">1/4</div>
         <div class="recipe__description">
           <span class="recipe__unit">cup</span>
           sweet onion sliced
@@ -135,9 +135,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">0.75</div>
+        <div class="recipe__quantity">3/4</div>
         <div class="recipe__description">
           <span class="recipe__unit">cup</span>
           strawberries sliced
@@ -145,9 +145,9 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
       </li>
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="#icon-check"></use>
         </svg>
-        <div class="recipe__quantity">0.25</div>
+        <div class="recipe__quantity">1/4</div>
         <div class="recipe__description">
           <span class="recipe__unit">cup</span>
           cilantro torn
@@ -165,7 +165,7 @@ export const formattedRecipe_5ed6604591c37cdc054bca85 = `
     <a class="btn--small recipe__btn" href="http://www.closetcooking.com/2012/07/balsamic-strawberry-and-chicken-pizza.html" target="_blank">
       <span>Directions</span>
       <svg class="search__icon">
-        <use href="src/img/icons.svg#icon-arrow-right"></use>
+        <use href="#icon-arrow-right"></use>
       </svg>
     </a>
   </div>`;
