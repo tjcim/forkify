@@ -41,6 +41,28 @@ export const id_5ed6604591c37cdc054bca85 = {
   },
 };
 
+export const id_1 = {
+  status: "success",
+  data: {
+    recipe: {
+      publisher: "Trevor's Sample",
+      ingredients: [
+        { quantity: 0.25, unit: "cup", description: "balsamic vinegar" },
+        { quantity: 0.5, unit: "cup", description: "strawberry preserves/jam" },
+        { quantity: null, unit: "", description: "Sriracha to taste" },
+      ],
+      source_url:
+        "http://www.closetcooking.com/2012/07/balsamic-strawberry-and-chicken-pizza.html",
+      image_url:
+        "http://forkify-api.herokuapp.com/images/Strawberry2BBalsamic2BPizza2Bwith2BChicken252C2BSweet2BOnion2Band2BSmoked2BBacon2B5002B300939d125e2.jpg",
+      title: "Delicious Stuff",
+      servings: 4,
+      cooking_time: 75,
+      id: "1",
+    },
+  },
+};
+
 export const invalid_5ed6604591c37cdc054bca85zzzzz = {
   status: "fail",
   message: "Invalid _id: 5ed6604591c37cdc054bca85zzzzz.",

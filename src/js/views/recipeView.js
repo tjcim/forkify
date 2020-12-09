@@ -3,6 +3,14 @@ import "regenerator-runtime/runtime";
 import icons from "../../img/icons.svg";
 import { Fraction } from "fractional";
 
+export function fixFractions(quantity) {
+  let result = new Fraction(quantity).toString();
+  if (result === "33/100") {
+    result = "1/3";
+  }
+  return result;
+}
+
 // I export both the class and an instance of the class.
 // The class is exported for testing. Otherwise the document would have no html when I tried to test
 // The instnce is exported for the application normal processing.
@@ -34,6 +42,12 @@ export class RecipeView {
       </div>
     `;
     this.render(markup);
+  }
+
+  addHandlerRender(handler) {
+    [("hashchange", "load")].forEach((ev) =>
+      window.addEventListener(ev, handler)
+    );
   }
 
   #generateMarkup() {
@@ -86,7 +100,7 @@ export class RecipeView {
   </div>
   <div class="recipe__ingredients">
     <h2 class="heading--2">Recipe ingredients</h2>
-    <ul class="recipe__ingredient-list">${this.#data.ingredients .map(this.#generateMarkupIngredient).join("")}
+    <ul class="recipe__ingredient-list">${this.#data.ingredients .map(this.generateMarkupIngredient).join("")}
     </ul>
   </div>
   <div class="recipe__directions">
@@ -107,14 +121,14 @@ export class RecipeView {
   </div>`;
   }
 
-  #generateMarkupIngredient(ing) {
+  generateMarkupIngredient(ing) {
     return `
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
           <use href="${icons}#icon-check"></use>
         </svg>
         <div class="recipe__quantity">${
-          ing.quantity ? new Fraction(ing.quantity).toString() : ""
+          ing.quantity ? fixFractions(ing.quantity) : ""
         }</div>
         <div class="recipe__description">
           <span class="recipe__unit">${ing.unit}</span>
@@ -124,4 +138,4 @@ export class RecipeView {
   }
 }
 
-// export const recipeView = new RecipeView();
+export const recipeView = new RecipeView();

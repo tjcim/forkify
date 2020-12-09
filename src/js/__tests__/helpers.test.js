@@ -2,6 +2,9 @@ import * as helpers from "../helpers.js";
 import * as apiResponse from "../__fixtures__/apiResponse.js";
 
 describe("getJSON", () => {
+  beforeEach(() => {
+    fetch.resetMocks();
+  });
   test("gets json of valid id", async () => {
     fetch.mockResponseOnce(
       JSON.stringify(apiResponse.id_5ed6604591c37cdc054bca85)
@@ -13,5 +16,11 @@ describe("getJSON", () => {
     await expect(receivedJson).toStrictEqual(
       apiResponse.id_5ed6604591c37cdc054bca85
     );
+  });
+  test("timeout", async () => {
+    fetch.mockReject(new Error("blah"));
+    const url =
+      "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bca85";
+    await expect(helpers.getJSON(url)).rejects.toThrowError();
   });
 });

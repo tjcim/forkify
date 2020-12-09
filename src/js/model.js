@@ -32,7 +32,7 @@ import { getJSON } from "./helpers.js";
 //   };
 // }
 
-export class State {
+class State {
   recipe = {};
 
   formatData(data) {
