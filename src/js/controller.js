@@ -2,10 +2,10 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 import { state } from "./model.js";
-import { RecipeView } from "./views/recipeView.js";
+import { recipeView } from "./views/recipeView.js";
 
 export async function controlRecipes(id) {
-  const recipeView = new RecipeView();
+  // const recipeView = new RecipeView();
   try {
     recipeView.renderSpinner();
     await state.loadRecipe(id);
@@ -22,3 +22,9 @@ function loadId() {
 }
 
 // [("hashchange", "load")].forEach((ev) => window.addEventListener(ev, loadId));
+
+function init() {
+  recipeView.addHandlerRender(loadId);
+}
+
+init();

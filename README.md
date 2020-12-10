@@ -1,5 +1,4 @@
 # TODO
-* Figure out how to create run the addHndlerRender function in `controller.js`
 * Implement error handling
 
 ## Notes
